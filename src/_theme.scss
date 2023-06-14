@@ -1,0 +1,30 @@
+$primaryColor: #007bff;
+$secondaryColor: #6c757d;
+
+$lightTheme: (
+  primaryColor: $primaryColor,
+  secondaryColor: $secondaryColor,
+  // ... add more theme variables specific to the light theme
+);
+
+$darkTheme: (
+  primaryColor: $primaryColor,
+  secondaryColor: $secondaryColor,
+  // ... add more theme variables specific to the dark theme
+);
+
+@mixin applyTheme($theme) {
+  :root {
+    @each $key, $value in $theme {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
+body {
+  @include applyTheme($lightTheme); // Set the initial theme to light
+}
+
+body.dark {
+  @include applyTheme($darkTheme);
+}

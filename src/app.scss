@@ -1,0 +1,15 @@
+@import 'theme';
+$primaryColor: #007bff;
+$secondaryColor: #6c757d;
+.app {
+  // Add yoes here
+  &.dark{
+    background-color: black;
+    color:red;
+  }
+  &.light{
+    background-color:white;
+    color: blue;
+  }
+}
+
